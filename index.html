@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggler</title>
+    <style>
+        body {
+            background-color: #74EBD5;
+            background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+
+            min-height: 100vh;
+        }
+
+        .App-title {
+            text-align: center;
+        }
+
+        .Bulb-container {
+            background-color: white;
+            width: 400px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(36, 34, 34);
+
+
+        }
+
+        .Bulb-img {
+            height: 250px;
+        }
+
+
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+
+
+        .btn-toggle{
+            font-size: 20px;
+            padding: 5px 20px;
+            border-radius: 40px;
+            border: none;
+            margin: 0px 20px;
+            cursor: pointer;
+            color: white;
+        }
+        .btn-on{
+            background-color: rgb(31, 96, 96);
+        }
+
+        .btn-off{
+            background-color: rgb(248, 75, 75);
+        }
+
+        .btn-toggle:hover{
+            box-shadow: 0 0 15px rgb(36, 34, 34);
+
+;
+        }
+
+        @media screen and(max-width: 500px) {
+            .Bulb-container {
+                width: 80%;
+            }
+
+            .Bulb-img {
+                height: 150px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="App-title"> Bulb Toggler </h1>
+    <div class="Bulb-container">
+        <img src="Bulb-off.png" class="Bulb-img" id="Bulb" />
+    </div>
+    <div class="btn-container">
+        <button class="btn-toggle btn-on" onclick="toggleBulb('on')">
+            on
+        </button>
+        <button class="btn-toggle btn-off" onclick="toggleBulb('off')">
+            off
+        </button>
+    </div>
+    <script>
+        function toggleBulb(state){
+          const BulbElement = document.getElementById('Bulb');
+        
+        if(state=='on'){
+            BulbElement.src = 'Bulb-on.png';                                                
+        }
+        else
+        {
+            BulbElement.src = 'Bulb-off.png';
+
+        }
+      
+    }
+    </script>
+    
+</body>
+
+</html>
